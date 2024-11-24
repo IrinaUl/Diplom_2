@@ -2,6 +2,8 @@ package site.nomoreparties.stellarburgers.utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.Random;
+
 public class RandomUtils {
     private static final String cyrillicCharacters = "абвгдежзийклмнопрстуфхцчшщъыьэюя";
 
@@ -18,5 +20,9 @@ public class RandomUtils {
 
     public static String cyrillic(int length) {
         return RandomStringUtils.random(length, cyrillicCharacters);
+    }
+
+    public static int randomNumber(int min, int max) {
+        return new Random().nextInt(max - min) + min;
     }
 }

@@ -15,6 +15,8 @@ import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
 public class LoginUserTests {
+    private final String FAIL_MESSAGE_INVALID = "email or password are incorrect";
+
     private User user;
     private UserResponse userResponse;
     private String token;
@@ -48,7 +50,7 @@ public class LoginUserTests {
 
         assertEquals("Неверный статус код", SC_UNAUTHORIZED, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "email or password are incorrect", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_INVALID, response.path("message"));
     }
 
     @Test
@@ -60,7 +62,7 @@ public class LoginUserTests {
 
         assertEquals("Неверный статус код", SC_UNAUTHORIZED, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "email or password are incorrect", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_INVALID, response.path("message"));
     }
 
     @After

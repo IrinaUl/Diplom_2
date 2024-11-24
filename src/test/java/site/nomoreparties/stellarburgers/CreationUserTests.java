@@ -16,6 +16,9 @@ import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.assertEquals;
 
 public class CreationUserTests {
+    private final String FAIL_MESSAGE_INVALID = "Email, password and name are required fields";
+    private final String FAIL_MESSAGE_DUBLICATE = "User already exists";
+
     private User user;
     private UserResponse userResponse;
     private String token;
@@ -51,7 +54,7 @@ public class CreationUserTests {
 
         assertEquals("Неверный статус код", SC_FORBIDDEN, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "Email, password and name are required fields", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_INVALID, response.path("message"));
     }
 
     @Test
@@ -65,7 +68,7 @@ public class CreationUserTests {
 
         assertEquals("Неверный статус код", SC_FORBIDDEN, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "Email, password and name are required fields", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_INVALID, response.path("message"));
     }
 
     @Test
@@ -79,7 +82,7 @@ public class CreationUserTests {
 
         assertEquals("Неверный статус код", SC_FORBIDDEN, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "Email, password and name are required fields", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_INVALID, response.path("message"));
     }
 
     @Test
@@ -93,7 +96,7 @@ public class CreationUserTests {
 
         assertEquals("Неверный статус код", SC_FORBIDDEN, response.statusCode());
         assertEquals("Что-то пошло не так", false, response.path("success"));
-        assertEquals("Описание ответа не соответствует ожидаемому", "User already exists", response.path("message"));
+        assertEquals("Описание ответа не соответствует ожидаемому", FAIL_MESSAGE_DUBLICATE, response.path("message"));
     }
 
     @After

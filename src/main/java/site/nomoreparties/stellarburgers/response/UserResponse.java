@@ -10,6 +10,7 @@ public class UserResponse {
     public static final String CREATE_PATH = "/api/auth/register";
     public static final String LOGIN_PATH = "/api/auth/login";
     private static final String DELETE_PATH = "/api/auth/user";
+    private static final String UPDATE_PATH = "/api/auth/user";
 
     @Step("Регистрации нового пользователя")
     public Response create(User user) {
@@ -30,7 +31,17 @@ public class UserResponse {
     @Step("Удаление пользователя")
     public Response delete(String token) {
         return given()
+                .header("Content-type", "application/json")
                 .header("Authorization", token)
                 .delete(DELETE_PATH);
+    }
+
+    @Step("Изменение пользователя")
+    public Response update (User user, String token) {
+        return given()
+                .header("Content-type", "application/json")
+                .header("Authorization", token)
+                .body(user)
+                .patch(UPDATE_PATH);
     }
 }
