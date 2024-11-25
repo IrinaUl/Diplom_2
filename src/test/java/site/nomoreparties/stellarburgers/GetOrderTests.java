@@ -20,7 +20,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
 public class GetOrderTests {
-    private final String FAIL_MESSAGE_UNAUTHORISED = "You should be authorised";
+    private static final String FAIL_MESSAGE_UNAUTHORISED = "You should be authorised";
 
     private UserResponse userResponse;
     private String token;

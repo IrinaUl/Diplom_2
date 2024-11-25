@@ -23,7 +23,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
 public class CreationOrderTests {
-    private final String FAIL_MESSAGE_NO_INGREDIENT = "Ingredient ids must be provided";
+    private static final String FAIL_MESSAGE_NO_INGREDIENT = "Ingredient ids must be provided";
 
     private Order order;
     private UserResponse userResponse;

@@ -15,7 +15,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
 public class LoginUserTests {
-    private final String FAIL_MESSAGE_INVALID = "email or password are incorrect";
+    private static final String FAIL_MESSAGE_INVALID = "email or password are incorrect";
 
     private User user;
     private UserResponse userResponse;

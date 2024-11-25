@@ -7,8 +7,8 @@ import site.nomoreparties.stellarburgers.models.Order;
 import static io.restassured.RestAssured.given;
 
 public class OrderResponse {
-    public static final String CREATE_PATH = "/api/orders";
-    public static final String GET_PATH = "/api/orders";
+    private static final String CREATE_PATH = "/api/orders";
+    private static final String GET_PATH = "/api/orders";
 
     @Step("Создание нового заказа")
     public Response create(Order order, String token) {

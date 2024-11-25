@@ -17,7 +17,7 @@ import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 import static org.junit.Assert.*;
 
 public class UpdateUserTests {
-    private final String FAIL_MESSAGE_UNAUTHORISED = "You should be authorised";
+    private static final String FAIL_MESSAGE_UNAUTHORISED = "You should be authorised";
 
     private User user;
     private UserResponse userResponse;
